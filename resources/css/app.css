@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Kufam&display=swap');
+@font-face {
+    font-family: "Charlotte";
+    src: url("https://www.fontmirror.com/app_public/files/t/1/2022/02/Bintang.ttf");
+}
+@layer base {
+  html {
+    font-family: 'Kufam', sans-serif;
+  }
+  .logoFont {
+    font-family: "Charlotte";
+  }
+}
