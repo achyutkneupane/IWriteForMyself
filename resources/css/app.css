@@ -2,16 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Kufam&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Kufam&family=Righteous&display=swap');
 @font-face {
-    font-family: "Charlotte";
-    src: url("https://www.fontmirror.com/app_public/files/t/1/2022/02/Bintang.ttf");
+    font-family: "Bintang";
+    src: url("../assets/Bintang.ttf");
 }
 @layer base {
   html {
     font-family: 'Kufam', sans-serif;
+    background-color: #01849a;
   }
+}
+@layer components {
   .logoFont {
-    font-family: "Charlotte";
+    font-family: "Bintang";
+  }
+  .titleLetter {
+    font-family: 'Righteous', cursive;
+  }
+  .subTitleLetter {
+    font-family: 'Courgette', cursive;
   }
 }

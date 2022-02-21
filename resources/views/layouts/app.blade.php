@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,13 +15,15 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @livewireStyles()
 </head>
-<body>
-    <div id="app">
-        <main>
-            {{ $slot }}
-        </main>
+
+<body class='bg-white'>
+    @livewire('components.header')
+    <div class='w-screen mt-24'>
+        {{ $slot }}
     </div>
+    @livewire('components.footer')
     <script src="{{ asset('js/app.js') }}" defer></script>
     @livewireScripts()
 </body>
+
 </html>
