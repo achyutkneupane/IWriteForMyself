@@ -8,12 +8,13 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
     <title>{{ config('app.name', 'Laravel') }}</title>
-
+    @stack('meta_tags')
+    @stack('schema_tags')
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @livewireStyles()
+    @stack('styles')
 </head>
 
 <body class='bg-white'>
@@ -23,7 +24,9 @@
     </div>
     @livewire('components.footer')
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/share.js') }}"></script>
     @livewireScripts()
+    @stack('scripts')
 </body>
 
 </html>

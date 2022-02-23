@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css2?family=Courgette&family=Kufam&family=Righteous&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Courgette&family=Fjalla+One&family=Kufam&family=PT+Sans+Narrow:wght@400;700&family=Righteous&display=swap);
 /*!
  * Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
@@ -9551,10 +9551,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 [hidden] {
   display: none;
 }
-  html {
-    font-family: 'Kufam', sans-serif;
-    background-color: #01849a;
-  }
+    html {
+        font-family: "Kufam", sans-serif;
+        background-color: #01849a;
+    }
 
 *, ::before, ::after {
   --tw-translate-x: 0;
@@ -9601,14 +9601,118 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-backdrop-sepia:  ;
 }
 .logoFont {
-    font-family: "Bintang";
-  }
+        font-family: "Bintang";
+    }
 .titleLetter {
-    font-family: 'Righteous', cursive;
-  }
+        font-family: "Righteous", cursive;
+    }
 .subTitleLetter {
-    font-family: 'Courgette', cursive;
-  }
+        font-family: "Courgette", cursive;
+    }
+.articleTitle {
+        font-family: "Fjalla One", sans-serif;
+    }
+.articleText {
+        font-family: "PT Sans Narrow", sans-serif;
+    }
+/* Blockquote design */
+/* Thanks to https://codepen.io/johnfinkdesign/pen/gRvEGq */
+blockquote {
+        border-left: 3px solid #01849a;
+        color: #3c3c3c;
+        font-size: 1em;
+        font-style: italic;
+        line-height: 1.8em;
+        margin: 1em 0em 1em 2em;
+        padding: 0em 2em;
+        position: relative;
+        transition: 0.2s border ease-in-out;
+        z-index: 0;
+    }
+blockquote:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: -4px;
+        height: 2em;
+        background-color: #ffffff;
+        width: 5px;
+        margin-top: -1em;
+    }
+blockquote:after {
+        content: "\201C";
+        position: absolute;
+        left: -0.5em;
+        color: #01849a;
+        font-size: 4em;
+        font-family: "Ionicons";
+        font-style: normal;
+        line-height: 1em;
+        text-align: center;
+        text-indent: -2px;
+        width: 1em;
+        margin-top: -0.5em;
+        transition: 0.2s all ease-in-out, 0.4s transform ease-in-out;
+    }
+blockquote:active:after {
+        transform: rotateY(360deg);
+    }
+@media only screen and (max-width: 576px) {
+      blockquote:after {
+        top: 56%;
+      }
+    }
+@media only screen and (min-width: 576px) {
+      blockquote:after {
+        top: 59%;
+      }
+    }
+@media only screen and (min-width: 768px) {
+      blockquote:after {
+        top: 55%;
+      }
+    }
+@media only screen and (min-width: 992px) {
+      blockquote:after {
+        top: 58%;
+      }
+    }
+@media only screen and (min-width: 1200px) {
+      blockquote:after {
+        top: 60%;
+      }
+    }
+@media only screen and (min-width: 1400px) {
+      blockquote:after {
+        top: 63%;
+      }
+    }
+/* blinking cursor */
+/* Thanks to https://codepen.io/ArtemGordinsky/pen/DgyQKy */
+.blinking-cursor {
+        font-weight: 100;
+        color: #01849a;
+        -webkit-animation: 1s blink step-end infinite;
+        animation: 1s blink step-end infinite;
+    }
+@keyframes "blink" {
+        from,
+        to {
+            color: transparent;
+        }
+        50% {
+            color: #01849a;
+        }
+    }
+@-webkit-keyframes "blink" {
+        from,
+        to {
+            color: transparent;
+        }
+        50% {
+            color: #01849a;
+        }
+    }
 .sr-only {
   position: absolute;
   width: 1px;
@@ -9638,6 +9742,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .left-6 {
   left: 1.5rem;
 }
+.bottom-0 {
+  bottom: 0px;
+}
+.left-10 {
+  left: 2.5rem;
+}
 .z-50 {
   z-index: 50;
 }
@@ -9649,6 +9759,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .order-1 {
   order: 1;
+}
+.order-3 {
+  order: 3;
+}
+.order-last {
+  order: 9999;
+}
+.row-span-1 {
+  grid-row: span 1 / span 1;
 }
 .mx-auto {
   margin-left: auto;
@@ -9684,11 +9803,17 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-24 {
   margin-top: 6rem;
 }
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
 .mb-3 {
   margin-bottom: 0.75rem;
 }
-.mb-2 {
-  margin-bottom: 0.5rem;
+.ml-8 {
+  margin-left: 2rem;
+}
+.ml-10 {
+  margin-left: 2.5rem;
 }
 .block {
   display: block;
@@ -9729,6 +9854,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-full {
   height: 100%;
 }
+.h-\[120px\] {
+  height: 120px;
+}
 .min-h-screen {
   min-height: 100vh;
 }
@@ -9761,6 +9889,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-2\/3 {
   width: 66.666667%;
+}
+.w-11\/12 {
+  width: 91.666667%;
+}
+.w-\[120px\] {
+  width: 120px;
 }
 .max-w-6xl {
   max-width: 72rem;
@@ -9804,6 +9938,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
+.cursor-pointer {
+  cursor: pointer;
+}
+.resize-y {
+  resize: vertical;
+}
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
@@ -9828,6 +9968,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 .justify-center {
   justify-content: center;
 }
+.justify-between {
+  justify-content: space-between;
+}
+.justify-around {
+  justify-content: space-around;
+}
+.justify-evenly {
+  justify-content: space-evenly;
+}
 .gap-8 {
   gap: 2rem;
 }
@@ -9842,6 +9991,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .gap-2 {
   gap: 0.5rem;
+}
+.gap-3 {
+  gap: 0.75rem;
 }
 .overflow-hidden {
   overflow: hidden;
@@ -9891,6 +10043,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-border-opacity: 1;
   border-color: rgb(1 132 154 / var(--tw-border-opacity));
 }
+.border-white {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
+}
+.border-red-900 {
+  --tw-border-opacity: 1;
+  border-color: rgb(127 29 29 / var(--tw-border-opacity));
+}
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -9909,8 +10069,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-transparent {
   background-color: transparent;
 }
+.object-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 .p-6 {
   padding: 1.5rem;
+}
+.p-4 {
+  padding: 1rem;
 }
 .py-4 {
   padding-top: 1rem;
@@ -9936,10 +10103,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
 }
-.py-2 {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-}
 .py-48 {
   padding-top: 12rem;
   padding-bottom: 12rem;
@@ -9956,6 +10119,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-left: 0.75rem;
   padding-right: 0.75rem;
 }
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
 .pt-8 {
   padding-top: 2rem;
 }
@@ -9968,14 +10135,20 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pt-12 {
   padding-top: 3rem;
 }
-.pl-3 {
-  padding-left: 0.75rem;
+.pl-4 {
+  padding-left: 1rem;
 }
 .pl-10 {
   padding-left: 2.5rem;
 }
-.pl-4 {
-  padding-left: 1rem;
+.pb-24 {
+  padding-bottom: 6rem;
+}
+.pb-10 {
+  padding-bottom: 2.5rem;
+}
+.pb-4 {
+  padding-bottom: 1rem;
 }
 .text-left {
   text-align: left;
@@ -10017,6 +10190,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem;
+}
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
 }
 .font-semibold {
   font-weight: 600;
@@ -10072,6 +10249,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+.text-red-700 {
+  --tw-text-opacity: 1;
+  color: rgb(185 28 28 / var(--tw-text-opacity));
 }
 .underline {
   -webkit-text-decoration-line: underline;
@@ -10143,6 +10324,20 @@ Ensure the default browser behavior of the `hidden` attribute.
 .hover\:text-themeColor:hover {
   --tw-text-opacity: 1;
   color: rgb(1 132 154 / var(--tw-text-opacity));
+}
+.hover\:underline:hover {
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+}
+.hover\:decoration-themeColor:hover {
+  -webkit-text-decoration-color: #01849a;
+          text-decoration-color: #01849a;
+}
+.hover\:decoration-8:hover {
+  text-decoration-thickness: 8px;
+}
+.hover\:underline-offset-4:hover {
+  text-underline-offset: 4px;
 }
 .focus\:outline-none:focus {
   outline: 2px solid transparent;
@@ -10250,12 +10445,24 @@ Ensure the default browser behavior of the `hidden` attribute.
     order: 3;
   }
 
+  .md\:row-span-3 {
+    grid-row: span 3 / span 3;
+  }
+
   .md\:flex {
     display: flex;
   }
 
+  .md\:grid {
+    display: grid;
+  }
+
   .md\:hidden {
     display: none;
+  }
+
+  .md\:h-\[180px\] {
+    height: 180px;
   }
 
   .md\:w-2\/5 {
@@ -10270,12 +10477,36 @@ Ensure the default browser behavior of the `hidden` attribute.
     width: 33.333333%;
   }
 
+  .md\:w-1\/2 {
+    width: 50%;
+  }
+
+  .md\:w-2\/3 {
+    width: 66.666667%;
+  }
+
+  .md\:w-\[180px\] {
+    width: 180px;
+  }
+
+  .md\:resize-none {
+    resize: none;
+  }
+
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .md\:grid-rows-3 {
+    grid-template-rows: repeat(3, minmax(0, 1fr));
+  }
+
   .md\:flex-row {
     flex-direction: row;
+  }
+
+  .md\:justify-start {
+    justify-content: flex-start;
   }
 
   .md\:justify-between {
@@ -10311,6 +10542,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     text-align: right;
   }
 
+  .md\:text-justify {
+    text-align: justify;
+  }
+
   .md\:text-5xl {
     font-size: 3rem;
     line-height: 1;
@@ -10323,3 +10558,4 @@ Ensure the default browser behavior of the `hidden` attribute.
     padding-right: 2rem;
   }
 }
+

@@ -28,27 +28,37 @@
             </button>
         </div>
         <div class="flex flex-col gap-4 text-center md:hidden">
-            <a class='text-2xl font-bold text-themeColor'>Home</a>
+            <a href="{{ route('landingPage') }}" class='text-2xl font-bold text-themeColor'>Home</a>
             <a class='text-2xl font-bold text-themeColor'>Explore</a>
             <a class='text-2xl font-bold text-themeColor'>About</a>
         </div>
         <div class='flex flex-col gap-4 md:hidden'>
-            <div class='px-4 py-3 text-xl font-bold text-center text-white border rounded-3xl bg-themeColor'>Login</div>
-            <div class='px-4 py-3 text-xl font-bold text-center text-white border rounded-3xl bg-themeColor'>Register
-            </div>
+            <a href="{{ route('login') }}" class='px-4 py-3 text-xl font-bold text-center text-white border rounded-3xl bg-themeColor'>Login</a>
+            <a href="{{ route('register') }}" class='px-4 py-3 text-xl font-bold text-center text-white border rounded-3xl bg-themeColor'>Register</a>
         </div>
     </nav>
     {{-- Navbar --}}
     <div class='flex items-center justify-center w-full h-full md:justify-between'>
-        <div class='text-3xl logoFont text-themeColor'>{{ env('APP_NAME') }}</div>
+        <div class='text-3xl logoFont text-themeColor'>
+            <a href="{{ route('landingPage') }}">
+                {{ env('APP_NAME') }}
+            </a>
+        </div>
         <div class="hidden gap-12 md:flex">
-            <a class='text-xl font-bold text-themeColor'>Home</a>
+            <a href="{{ route('landingPage') }}" class='text-xl font-bold text-themeColor'>Home</a>
             <a class='text-xl font-bold text-themeColor'>Explore</a>
             <a class='text-xl font-bold text-themeColor'>About</a>
         </div>
         <div class='flex-row hidden gap-4 md:flex'>
-            <div class='px-4 py-2 text-xl font-bold text-white border rounded-3xl bg-themeColor'>Login</div>
-            <div class='px-4 py-2 text-xl font-bold text-white border rounded-3xl bg-themeColor'>Register</div>
+            @guest
+            <a href="{{ route('login') }}" class='px-4 py-3 text-xl font-bold text-center text-white border rounded-3xl bg-themeColor'>Login</a>
+            <a href="{{ route('register') }}" class='px-4 py-3 text-xl font-bold text-center text-white border rounded-3xl bg-themeColor'>Register</a>
+            @else
+            <a href="{{ route('landingPage') }}" class='px-4 py-3 text-xl font-bold text-center text-white border rounded-3xl bg-themeColor'>My Account</a>
+            <a href="{{ route('logout') }}" class='px-4 py-3 text-xl font-bold text-center text-white border rounded-3xl bg-themeColor'>
+                Sign Out
+            </a>
+            @endguest
         </div>
     </div>
 </nav>
