@@ -1,4 +1,4 @@
-<div class='flex flex-col items-center justify-center w-full gap-12 py-40 text-center'>
+<div class='flex flex-col items-center justify-center w-full gap-12 py-20 text-center'>
     <h1 class='text-3xl font-bold blockLetter'>Sign In</h1>
     <div class='flex flex-col items-center w-5/6 gap-2 md:w-1/3'>
         <div class='w-full'>
@@ -11,7 +11,7 @@
                 <input type="text" placeholder="Enter Your Email/Username" wire:model='username'
                     class="relative w-full px-3 py-3 pl-10 text-sm text-black placeholder-gray-400 bg-white border rounded-full outline-none border-themeColor focus:outline-none focus:ring-2 focus:ring-themeColor" />
                 @error('username')
-                    <span class="ml-12 text-xs text-red-700">{{ $message }}</span>
+                    <span class="ml-12 mt-2 text-xs text-red-700">{{ $message }}</span>
                 @enderror
             </div>
         </div>
@@ -28,7 +28,7 @@
                     wire:model='password'
                     class="relative w-full px-3 py-3 pl-10 text-sm text-black placeholder-gray-400 bg-white border rounded-full outline-none border-themeColor focus:outline-none focus:ring-2 focus:ring-themeColor" />
                 @error('password')
-                    <span class="ml-12 text-xs text-red-700">{{ $message }}</span>
+                    <span class="ml-12 mt-2 text-xs text-red-700">{{ $message }}</span>
                 @enderror
             </div>
         </div>
