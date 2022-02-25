@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'achyutkneupane@gmail.com',
             'password' => Hash::make('Ghost0vperditi0n'),
             'type' => 'admin',
+            'gender' => 'male',
             'email_verified_at' => now(),
             'remember_token' => \Illuminate\Support\Str::random(10),
             'created_at' => now(),

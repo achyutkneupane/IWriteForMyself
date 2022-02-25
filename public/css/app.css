@@ -9745,9 +9745,6 @@ blockquote:active:after {
 .bottom-0 {
   bottom: 0px;
 }
-.left-10 {
-  left: 2.5rem;
-}
 .z-50 {
   z-index: 50;
 }
@@ -9772,6 +9769,10 @@ blockquote:active:after {
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
+}
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 .ml-1 {
   margin-left: 0.25rem;
@@ -9808,12 +9809,6 @@ blockquote:active:after {
 }
 .mb-3 {
   margin-bottom: 0.75rem;
-}
-.ml-8 {
-  margin-left: 2rem;
-}
-.ml-10 {
-  margin-left: 2.5rem;
 }
 .block {
   display: block;
@@ -9968,15 +9963,6 @@ blockquote:active:after {
 .justify-center {
   justify-content: center;
 }
-.justify-between {
-  justify-content: space-between;
-}
-.justify-around {
-  justify-content: space-around;
-}
-.justify-evenly {
-  justify-content: space-evenly;
-}
 .gap-8 {
   gap: 2rem;
 }
@@ -10042,14 +10028,6 @@ blockquote:active:after {
 .border-themeColor {
   --tw-border-opacity: 1;
   border-color: rgb(1 132 154 / var(--tw-border-opacity));
-}
-.border-white {
-  --tw-border-opacity: 1;
-  border-color: rgb(255 255 255 / var(--tw-border-opacity));
-}
-.border-red-900 {
-  --tw-border-opacity: 1;
-  border-color: rgb(127 29 29 / var(--tw-border-opacity));
 }
 .bg-white {
   --tw-bg-opacity: 1;
@@ -10123,6 +10101,10 @@ blockquote:active:after {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
+.py-20 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
 .pt-8 {
   padding-top: 2rem;
 }
@@ -10143,12 +10125,6 @@ blockquote:active:after {
 }
 .pb-24 {
   padding-bottom: 6rem;
-}
-.pb-10 {
-  padding-bottom: 2.5rem;
-}
-.pb-4 {
-  padding-bottom: 1rem;
 }
 .text-left {
   text-align: left;
@@ -10253,6 +10229,10 @@ blockquote:active:after {
 .text-red-700 {
   --tw-text-opacity: 1;
   color: rgb(185 28 28 / var(--tw-text-opacity));
+}
+.text-green-700 {
+  --tw-text-opacity: 1;
+  color: rgb(21 128 61 / var(--tw-text-opacity));
 }
 .underline {
   -webkit-text-decoration-line: underline;

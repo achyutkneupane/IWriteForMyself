@@ -16,11 +16,11 @@ class Login extends Component
                 'username' => 'required|exists:users,email',
                 'password' => 'required',
             ],[
-                'username.exists' => 'Email is not registered',
-                'username.required' => 'Enter Password',
-                'password.required' => 'Enter Password',
+                'username.required' => 'The Email Address cannot be empty.',
+                'username.exists' => 'This Email Address is not registered.',
+                'password.required' => 'The Password cannot be empty.',
             ],[
-                'username' => 'Email',
+                'username' => 'Email Address',
                 'password' => 'Password',
             ]);
             $user = User::where('email',$this->username)->first();
@@ -31,9 +31,9 @@ class Login extends Component
                 'username' => 'required|exists:users,username',
                 'password' => 'required',
             ],[
-                'username.exists' => 'Username is not registered',
-                'username.required' => 'Enter Username',
-                'password.required' => 'Enter Password',
+                'username.required' => 'The Username cannot be empty.',
+                'username.exists' => 'This Username is not registered.',
+                'password.required' => 'The Password cannot be empty.',
             ],[
                 'username' => 'Username',
                 'password' => 'Password',
