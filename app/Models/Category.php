@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Tag extends Model
+class Category extends Model
 {
     use HasFactory,SoftDeletes,Sluggable;
     protected $dates = ['deleted_at'];
@@ -22,6 +22,6 @@ class Tag extends Model
     }
     public function articles()
     {
-        return $this->belongsToMany(Article::class,'article_tag','tag_id');
+        return $this->hasMany(Article::class);
     }
 }

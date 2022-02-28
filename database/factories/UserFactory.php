@@ -24,7 +24,7 @@ class UserFactory extends Factory
             'email' => $this->faker->unique()->safeEmail(),
             'password' => Hash::make('password'),
             'type' => 'writer',
-            'gender' => 'pnts',
+            'gender' => $this->faker->randomElement(array('male','female','other','pnts')),
             'email_verified_at' => now(),
             'remember_token' => \Illuminate\Support\Str::random(10),
             'created_at' => now(),

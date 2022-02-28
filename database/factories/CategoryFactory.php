@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Tag>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Category>
  */
-class TagFactory extends Factory
+class CategoryFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,9 +17,9 @@ class TagFactory extends Factory
      */
     public function definition()
     {
-        $title = $this->faker->sentence($this->faker->numberBetween(3,7));
+        $title = $this->faker->word();
         return [
-            'title' => $title,
+            'title' => ucwords($title),
             'slug' => Str::slug($title),
         ];
     }

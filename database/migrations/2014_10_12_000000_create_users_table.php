@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('username')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->enum('type',array('writer','mods','admin'))->default('writer');
-            $table->enum('gender',array('male','female','other','pnts'))->default('pnts');
+            $table->enum('gender', array('male','female','other','pnts'))->default('pnts');
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
