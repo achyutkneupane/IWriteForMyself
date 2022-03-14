@@ -24,4 +24,4 @@ Route::get('/logout', function() {
     auth()->logout();
     return redirect()->route('landingPage');
 })->name('logout');
-Route::get('/article', ViewArticle::class)->name('article.view');
+Route::get('/article/{slug}', ViewArticle::class)->name('article.view');

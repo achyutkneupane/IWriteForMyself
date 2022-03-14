@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('strangers', function (Blueprint $table) {
             $table->id();
             $table->string('cookie_id')->unique();
-            $table->string('name');
-            $table->string('email');
+            $table->string('name')->nullable();
+            $table->string('email')->nullable();
             $table->timestamps();
         });
     }

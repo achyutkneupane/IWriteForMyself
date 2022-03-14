@@ -106,17 +106,9 @@ class User extends Authenticatable implements HasMedia
     }
     public function comments()
     {
-        return $this->morphMany(Comment::class, 'commentable');
-    }
-    public function votes()
-    {
-        return $this->morphMany(Vote::class, 'votable');
-    }
-    public function commentsPosted()
-    {
         return $this->morphMany(Comment::class, 'commenter');
     }
-    public function votesGiven()
+    public function votes()
     {
         return $this->morphMany(Vote::class, 'voter');
     }
