@@ -1,4 +1,4 @@
-<nav x-data="{ sideBarOpen: false }"
+<header x-data="{ sideBarOpen: false }"
     class='fixed top-0 z-50 flex items-center w-screen h-24 px-8 bg-white border-b-4 sticky-top border-themeColor'>
     {{-- sidebar hamburger --}}
     <button class="absolute block w-10 h-10 text-themeColor left-6 focus:outline-none md:hidden"
@@ -61,4 +61,4 @@
             @endguest
         </div>
     </div>
-</nav>
+</header>

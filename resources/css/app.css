@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Courgette&family=Fjalla+One&family=Kufam&family=PT+Sans+Narrow:wght@400;700&family=Righteous&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Fjalla+One&family=Kufam:wght@400;600;700&family=PT+Sans+Narrow:wght@400;700&family=Righteous&display=swap');
 @font-face {
     font-family: "Bintang";
     src: url("../assets/Bintang.ttf");
@@ -28,6 +28,10 @@
     }
     .articleText {
         font-family: "PT Sans Narrow", sans-serif;
+    }
+    .articleText a{
+        color: #01849a;
+        font-weight: bold;
     }
 
     /* Blockquote design */

@@ -10,6 +10,8 @@ use Illuminate\Support\Str;
  */
 class ArticleFactory extends Factory
 {
+    // Define a public $content variable.
+    public $content = null;
     /**
      * Define the model's default state.
      *
@@ -17,6 +19,7 @@ class ArticleFactory extends Factory
      */
     public function definition()
     {
+        collect($this->faker->paragraphs($this->faker->numberBetween(3,5),false))->map(function($text) { $this->content .= '<p>'.$text.'</p>'; });
         $title = $this->faker->sentence($this->faker->numberBetween(3,7));
         return [
             'title' => $title,
@@ -24,7 +27,7 @@ class ArticleFactory extends Factory
             'category_id' => $this->faker->numberBetween(1,5),
             'writer_id' => 1,
             'views' => 0,
-            'content' => $this->faker->text(5000),
+            'content' => $this->content,
             'description' => $this->faker->text($this->faker->numberBetween(300,750)),
             'published_at' => now(),
             'created_at' => now(),
