@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Crawl extends Model
 {
     use HasFactory;
+    protected $guarded = [];
 }

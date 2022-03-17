@@ -15,10 +15,11 @@ return new class extends Migration
     {
         Schema::create('crawls', function (Blueprint $table) {
             $table->id();
-            $table->ipAddress('ip');
-            $table->string('user_agent');
-            $table->string('referrer');
-            $table->string('url');
+            $table->ipAddress('ip')->nullable();
+            $table->string('user_agent')->nullable();
+            $table->boolean('is_crawler')->nullable();
+            $table->string('referrer')->nullable();
+            $table->string('url')->nullable();
             $table->timestamps();
         });
     }
