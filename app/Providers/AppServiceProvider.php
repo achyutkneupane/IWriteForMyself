@@ -5,10 +5,9 @@ namespace App\Providers;
 use App\Helpers\CookieHelper;
 use Illuminate\Support\ServiceProvider;
 use App\Models\Stranger;
-use Illuminate\Cookie\CookieValuePrefix;
 use Illuminate\Support\Facades\Cookie;
-use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Schema;
+use Jaybizzle\LaravelCrawlerDetect\Facades\LaravelCrawlerDetect as Crawler;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -28,6 +27,9 @@ class AppServiceProvider extends ServiceProvider
      * @return void
      */
     public function boot() {
+        if(Crawler::isCrawler()) {
+            return response()->json(Crawler::getMatches());
+        }
         if(Schema::hasTable('strangers')) {
             if(!auth()->check()) {
                 if(Cookie::has('cookie_id')) {

@@ -165,6 +165,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Jorenvh\Share\Providers\ShareServiceProvider::class,
         Wimil\Followers\Provider::class,
+        Jaybizzle\LaravelCrawlerDetect\LaravelCrawlerDetectServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -194,6 +195,7 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         'Share' => Jorenvh\Share\ShareFacade::class,
+        'Crawler' => Jaybizzle\LaravelCrawlerDetect\Facades\LaravelCrawlerDetect::class,
     ])->toArray(),
 
 ];
