@@ -2,6 +2,7 @@
 
 namespace App\Helpers;
 
+use App\Models\Crawl;
 use App\Models\Stranger;
 use App\Models\User;
 use Illuminate\Cookie\CookieValuePrefix;
@@ -19,6 +20,13 @@ class CookieHelper
     {
         $userCheck = auth()->check() ? auth()->user() : Stranger::where('cookie_id', Cookie::get('cookie_id'))->first();
         if(!$userCheck) {
+            Crawl::create([
+                'ip' => request()->ip(),
+                'user_agent' => request()->userAgent(),
+                'is_crawler' => Crawler::isCrawler(),
+                'referrer' => request()->server('HTTP_REFERER'),
+                'url' => request()->fullUrl(),
+            ]);
             return User::find(2);
         }
         else {
