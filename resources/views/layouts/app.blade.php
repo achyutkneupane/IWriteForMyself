@@ -17,11 +17,13 @@
 </head>
 
 <body class='bg-white'>
+    @if(!Crawler::isCrawler())
     @livewire('components.header')
     <div class='w-screen mt-24'>
         {{ $slot }}
     </div>
     @livewire('components.footer')
+    @endif
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/share.js') }}"></script>
     @livewireScripts()
