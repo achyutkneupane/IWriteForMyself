@@ -11,7 +11,6 @@ use Livewire\WithPagination;
 class CommentsComponent extends Component
 {
     use WithPagination;
-    protected $paginationTheme = 'tailwind';
 
     public $model;
     public $full_name,$email,$message;
@@ -66,6 +65,11 @@ class CommentsComponent extends Component
             'email',
             'message',
         ]);
+    }
+
+    public function paginationView()
+    {
+        return 'vendor.livewire.i-write-for-myself-pagination';
     }
     public function render()
     {

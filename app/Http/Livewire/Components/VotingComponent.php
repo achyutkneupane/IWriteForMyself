@@ -3,8 +3,6 @@
 namespace App\Http\Livewire\Components;
 
 use App\Helpers\CookieHelper;
-use App\Models\Stranger;
-use Illuminate\Support\Facades\Cookie;
 use Livewire\Component;
 
 class VotingComponent extends Component

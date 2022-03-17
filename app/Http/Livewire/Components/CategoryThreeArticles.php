@@ -8,12 +8,15 @@ use Livewire\WithPagination;
 class CategoryThreeArticles extends Component
 {
     use WithPagination;
-    protected $paginationTheme = 'tailwind';
 
     public $category;
     public function mount($category)
     {
         $this->category = $category;
+    }
+    public function paginationView()
+    {
+        return 'vendor.livewire.i-write-for-myself-pagination';
     }
     public function render()
     {

@@ -72,3 +72,30 @@
         </div>
     </div>
 </div>
+@push('meta_tags')
+    <title>Sign Up - {{ env('APP_NAME') }}</title>
+    <meta name="title" content="Sign Up - {{ env('APP_NAME') }}">
+    <meta name="description" content="I Write For Myself">
+    <meta name="keywords" content="I Write For Myself, IWriteForMySelf, Sign Up">
+    <meta property='article:published_time' content='2022-03-17 00:00:00' />
+    <meta property='article:section' content='article' />
+    <meta property='article:author' content='https://www.facebook.com/IWriteForMyself' />
+    <meta property='article:publisher' content='https://www.facebook.com/IWriteForMyself' />
+    <meta property="fb:app_id" content="931301841077172">
+    <meta property="fb:pages" content="109010941712624">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:title" content="Sign Up - {{ env('APP_NAME') }}">
+    <meta property="og:description" content="I Write For Myself">
+    <meta property="og:image" content="">
+    <meta property="og:site_name" content="{{ env('APP_NAME') }}">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="{{ url()->current() }}">
+    <meta name="twitter:title" content="Sign Up - {{ env('APP_NAME') }}">
+    <meta name="twitter:description" content="I Write For Myself">
+    <meta name="twitter:image" content="">
+    <meta name="twitter:site" content="@IWriteForMyself">
+    {{-- <link rel="amphtml" href="{{ strtolower(route('viewAmpArticle',$slug)) }}"> --}}
+@endpush

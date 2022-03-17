@@ -1,10 +1,10 @@
-<div class='flex justify-center w-full gap-4 pt-12 pb-24'>
+<main class='flex justify-center w-full gap-4 pt-12 pb-24'>
     <article class='flex flex-col w-11/12 gap-8 md:w-1/2' itemscope itemtype="http://schema.org/Article">
         <header class='w-full'>
             <div class="relative overflow-hidden bg-white">
                 <a href='{{ $article->cover }}' target="_blank"><img class="object-cover w-full h-full" height='630'
                         width='1200' loading="lazy" src="{{ $article->big_cover }}" itemprop="image"
-                        alt="Thumbnail Image" /></a>
+                        alt="{{ $article->title }} - {{ env('APP_NAME') }}" /></a>
                 <div class='absolute bottom-0 flex items-center justify-center w-full px-12 py-4 text-center'>
                     <span
                         class='px-8 py-2 font-bold text-white rounded-full bg-themeColor'>{{ $article->category->title }}</span>
@@ -20,7 +20,7 @@
                     <time pubdate datetime="{{ $article->published_at }}"
                         itemprop="dateCreated datePublished">{{ \Carbon\Carbon::parse($article->published_at)->isoFormat('d MMM. Y') }}</time>
                     <span>|</span>
-                    <address class='font-bold author' itemprop="author publisher"><a
+                    <address class='font-bold author' itemprop="author publisher" name="{{ $article->writer->name }}"><a
                             rel='author'>{{ $article->writer->name }}</a></address>
                 </div>
             </div>
@@ -55,9 +55,35 @@
         </div>
         @livewire('components.comments-component', ['model' => $article])
     </article>
-</div>
+</main>
 
 @push('meta_tags')
+    <title>{{ $article->title }} - {{ env('APP_NAME') }}</title>
+    <link rel="canonical" href="{{ route('article.view',$article->slug) }}" />
+    <meta name="title" content="{{ $article->title }} - {{ env('APP_NAME') }}">
+    <meta name="description" content="{{ $article->description }}">
+    <meta name="keywords" content="I Write For Myself, IWriteForMySelf, {{ $article->title }}">
+    <meta property='article:published_time' content='2022-03-17 00:00:00' />
+    <meta property='article:section' content='article' />
+    <meta property='article:author' content='https://www.facebook.com/IWriteForMyself' />
+    <meta property='article:publisher' content='https://www.facebook.com/IWriteForMyself' />
+    <meta property="fb:app_id" content="931301841077172">
+    <meta property="fb:pages" content="109010941712624">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:title" content="{{ $article->title }} - {{ env('APP_NAME') }}">
+    <meta property="og:description" content="{{ $article->description }}">
+    <meta property="og:image" content="{{ $article->cover }}">
+    <meta property="og:site_name" content="{{ env('APP_NAME') }}">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="{{ url()->current() }}">
+    <meta name="twitter:title" content="{{ $article->title }} - {{ env('APP_NAME') }}">
+    <meta name="twitter:description" content="{{ $article->description }}">
+    <meta name="twitter:image" content="{{ $article->cover }}">
+    <meta name="twitter:site" content="@IWriteForMyself">
+    {{-- <link rel="amphtml" href="{{ strtolower(route('viewAmpArticle',$slug)) }}"> --}}
 @endpush
 
 @push('schema_tags')

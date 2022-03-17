@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Fjalla+One&family=Kufam:wght@400;600;700&family=PT+Sans+Narrow:wght@400;700&family=Righteous&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Courgette&family=Fjalla+One&family=Kufam:wght@400;600;700&family=PT+Sans+Narrow:wght@400;700&family=Righteous&display=swap");
 @font-face {
     font-family: "Bintang";
     src: url("../assets/Bintang.ttf");
@@ -29,9 +29,27 @@
     .articleText {
         font-family: "PT Sans Narrow", sans-serif;
     }
-    .articleText a{
+    .articleText a {
         color: #01849a;
         font-weight: bold;
+    }
+    .categoryTitle:before,
+    .categoryTitle:after {
+        background-color: #01849a;
+        content: "";
+        display: inline-block;
+        height: 8px;
+        position: relative;
+        vertical-align: middle;
+        width: 100%;
+    }
+    .categoryTitle:before {
+        right: 0.4em;
+        margin-left: -97%;
+    }
+    .categoryTitle:after {
+        left: 0.4em;
+        margin-right: -50%;
     }
 
     /* Blockquote design */
@@ -77,34 +95,34 @@
         transform: rotateY(360deg);
     }
     @media only screen and (max-width: 576px) {
-      blockquote:after {
-        top: 56%;
-      }
+        blockquote:after {
+            top: 56%;
+        }
     }
     @media only screen and (min-width: 576px) {
-      blockquote:after {
-        top: 59%;
-      }
+        blockquote:after {
+            top: 59%;
+        }
     }
     @media only screen and (min-width: 768px) {
-      blockquote:after {
-        top: 55%;
-      }
+        blockquote:after {
+            top: 55%;
+        }
     }
     @media only screen and (min-width: 992px) {
-      blockquote:after {
-        top: 58%;
-      }
+        blockquote:after {
+            top: 58%;
+        }
     }
     @media only screen and (min-width: 1200px) {
-      blockquote:after {
-        top: 60%;
-      }
+        blockquote:after {
+            top: 60%;
+        }
     }
     @media only screen and (min-width: 1400px) {
-      blockquote:after {
-        top: 63%;
-      }
+        blockquote:after {
+            top: 63%;
+        }
     }
 
     /* blinking cursor */
