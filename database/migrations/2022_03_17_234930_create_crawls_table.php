@@ -18,6 +18,7 @@ return new class extends Migration
             $table->ipAddress('ip')->nullable();
             $table->string('user_agent')->nullable();
             $table->boolean('is_crawler')->nullable();
+            $table->string('crawler')->nullable();
             $table->string('referrer')->nullable();
             $table->string('url')->nullable();
             $table->timestamps();

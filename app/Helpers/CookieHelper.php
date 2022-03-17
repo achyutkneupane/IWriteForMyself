@@ -24,6 +24,7 @@ class CookieHelper
                 'ip' => request()->ip(),
                 'user_agent' => request()->userAgent(),
                 'is_crawler' => Crawler::isCrawler(),
+                'crawler' => Crawler::getMatches(),
                 'referrer' => request()->server('HTTP_REFERER'),
                 'url' => request()->fullUrl(),
             ]);
