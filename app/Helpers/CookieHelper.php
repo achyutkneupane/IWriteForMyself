@@ -17,9 +17,12 @@ class CookieHelper
     }
     static public function getUser()
     {
-        if(Crawler::isCrawler()) {
+        $userCheck = auth()->check() ? auth()->user() : Stranger::where('cookie_id', Cookie::get('cookie_id'))->first();
+        if(!$userCheck) {
             return User::find(2);
         }
-        return auth()->check() ? auth()->user() : Stranger::where('cookie_id', Cookie::get('cookie_id'))->first();
+        else {
+            return $userCheck;
+        }
     }
 }
