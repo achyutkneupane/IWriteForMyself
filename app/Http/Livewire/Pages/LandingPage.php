@@ -8,7 +8,7 @@ use Livewire\Component;
 class LandingPage extends Component
 {
     public function render() {
-        $categories = Category::with('articles.media')->get();
+        $categories = Category::with('articles')->get();
         return view('livewire.pages.landing-page', compact('categories'));
     }
 }

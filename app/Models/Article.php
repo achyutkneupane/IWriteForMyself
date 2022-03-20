@@ -16,11 +16,6 @@ class Article extends Model implements HasMedia
     use HasFactory,SoftDeletes, InteractsWithMedia, Sluggable;
     protected $dates = ['deleted_at'];
     protected $guarded = [];
-    protected $appends = [
-        'cover',
-        'medium_cover',
-        'big_cover'
-    ];
     public function sluggable(): array
     {
         return [
@@ -41,15 +36,15 @@ class Article extends Model implements HasMedia
     {
         return $this->belongsToMany(Tag::class,'article_tag','article_id');
     }
-    public function getCoverAttribute()
+    public function cover()
     {
         return $this->getMedia('cover')->count() ? $this->getMedia('cover')->last()->getUrl() : null;
     }
-    public function getMediumCoverAttribute()
+    public function medium_cover()
     {
         return $this->getMedia('cover')->count() ? $this->getMedia('cover')->last()->getUrl('medium') : null;
     }
-    public function getBigCoverAttribute()
+    public function big_cover()
     {
         return $this->getMedia('cover')->count() ? $this->getMedia('cover')->last()->getUrl('big') : null;
     }

@@ -11,8 +11,8 @@ class Footer extends Component
     public $categories,$latestArticles;
     public function mount()
     {
-        $this->categories = Category::with('articles.media')->withCount('articles')->orderBy('articles_count', 'desc')->take(7)->get();
-        $this->latestArticles = Article::with('media')->latest()->take(7)->get();
+        $this->categories = Category::withCount('articles')->orderBy('articles_count', 'desc')->take(7)->get();
+        $this->latestArticles = Article::latest()->take(7)->get();
     }
     public function render()
     {

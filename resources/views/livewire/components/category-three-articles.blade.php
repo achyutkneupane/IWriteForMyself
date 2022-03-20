@@ -8,7 +8,7 @@
                 <div class='flex flex-row w-full gap-1 bg-white border rounded-lg shadow-md xl:gap-4 xl:flex-col'>
                     <div class='w-1/3 xl:w-full'>
                         <a href="{{ route('article.view',$article->slug) }}">
-                            <img class="object-cover object-center w-full h-full rounded-lg" src="{{ $article->medium_cover }}" alt="" />
+                            <img class="object-cover object-center w-full h-full rounded-lg" src="{{ $article->medium_cover() }}" alt="" />
                         </a>
                     </div>
                     <div class='flex flex-col w-2/3 gap-1 p-2 h-full xl:h-[24rem] xl:p-5 xl:w-full'>

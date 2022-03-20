@@ -29,14 +29,6 @@ class User extends Authenticatable implements HasMedia
 
     protected $dates = ['deleted_at'];
     protected $guarded = [];
-    protected $appends = [
-        'profile',
-        'medium_profile',
-        'big_profile',
-        'cover',
-        'medium_cover',
-        'big_cover'
-    ];
 
     public function sluggable(): array
     {
@@ -57,27 +49,27 @@ class User extends Authenticatable implements HasMedia
         'deleted_at' => 'datetime'
     ];
 
-    public function getProfileAttribute()
+    public function profile()
     {
         return $this->getMedia('profile')->count() ? $this->getMedia('profile')->last()->getUrl() : null;
     }
-    public function getMediumProfileAttribute()
+    public function medium_profile()
     {
         return $this->getMedia('profile')->count() ? $this->getMedia('profile')->last()->getUrl('medium') : null;
     }
-    public function getBigProfileAttribute()
+    public function big_profile()
     {
         return $this->getMedia('profile')->count() ? $this->getMedia('profile')->last()->getUrl('big') : null;
     }
-    public function getCoverAttribute()
+    public function cover()
     {
         return $this->getMedia('cover')->count() ? $this->getMedia('cover')->last()->getUrl() : null;
     }
-    public function getMediumCoverAttribute()
+    public function medium_cover()
     {
         return $this->getMedia('cover')->count() ? $this->getMedia('cover')->last()->getUrl('medium') : null;
     }
-    public function getBigCoverAttribute()
+    public function big_cover()
     {
         return $this->getMedia('cover')->count() ? $this->getMedia('cover')->last()->getUrl('big') : null;
     }

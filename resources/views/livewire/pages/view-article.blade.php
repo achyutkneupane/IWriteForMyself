@@ -2,8 +2,8 @@
     <article class='flex flex-col w-11/12 gap-8 md:w-1/2' itemscope itemtype="http://schema.org/Article">
         <header class='w-full'>
             <div class="relative overflow-hidden bg-white">
-                <a href='{{ $article->cover }}' target="_blank"><img class="object-cover w-full h-full" height='630'
-                        width='1200' loading="lazy" src="{{ $article->big_cover }}" itemprop="image"
+                <a href='{{ $article->cover() }}' target="_blank"><img class="object-cover w-full h-full" height='630'
+                        width='1200' loading="lazy" src="{{ $article->big_cover() }}" itemprop="image"
                         alt="{{ $article->title }} - {{ env('APP_NAME') }}" /></a>
                 <div class='absolute bottom-0 flex items-center justify-center w-full px-12 py-4 text-center'>
                     <span
@@ -40,7 +40,7 @@
         <hr class='border-1 border-themeColor' />
         <div class='flex justify-center w-full gap-8'>
             <div class='flex items-center justify-center w-full gap-8 md:w-2/3'>
-                <img src='{{ $article->writer->medium_profile ?? asset('assets/man-avatar.png') }}' loading='lazy'
+                <img src='{{ $article->writer->medium_profile() ?? asset('assets/man-avatar.png') }}' loading='lazy'
                     class='w-[120px] h-[120px] md:w-[180px] md:h-[180px]' />
                 <div class='flex flex-col justify-center gap-2 text-left'>
                     <span class='font-bold'>
@@ -74,14 +74,14 @@
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:title" content="{{ $article->title }} - {{ env('APP_NAME') }}">
     <meta property="og:description" content="{{ $article->description }}">
-    <meta property="og:image" content="{{ $article->cover }}">
+    <meta property="og:image" content="{{ $article->cover() }}">
     <meta property="og:site_name" content="{{ env('APP_NAME') }}">
 
     <meta name="twitter:card" content="summary">
     <meta name="twitter:url" content="{{ url()->current() }}">
     <meta name="twitter:title" content="{{ $article->title }} - {{ env('APP_NAME') }}">
     <meta name="twitter:description" content="{{ $article->description }}">
-    <meta name="twitter:image" content="{{ $article->cover }}">
+    <meta name="twitter:image" content="{{ $article->cover() }}">
     <meta name="twitter:site" content="@IWriteForMyself">
     {{-- <link rel="amphtml" href="{{ strtolower(route('viewAmpArticle',$slug)) }}"> --}}
 @endpush

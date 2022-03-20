@@ -20,7 +20,7 @@ class CategoryThreeArticles extends Component
     }
     public function render()
     {
-        $articles = $this->category->articles()->with('media','writer.media')->orderBy('created_at','desc')->paginate(6, ['*'], $this->category->slug.'-page');
+        $articles = $this->category->articles()->with('media','writer')->orderBy('created_at','desc')->paginate(6, ['*'], $this->category->slug.'-page');
         return view('livewire.components.category-three-articles', compact('articles'));
     }
 }
