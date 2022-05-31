@@ -2,10 +2,13 @@
 
 namespace App\Helpers;
 
+use App\Models\Crawl;
 use App\Models\Stranger;
+use App\Models\User;
 use Illuminate\Cookie\CookieValuePrefix;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Crypt;
+use Jaybizzle\LaravelCrawlerDetect\Facades\LaravelCrawlerDetect as Crawler;
 
 class CookieHelper
 {
@@ -15,6 +18,20 @@ class CookieHelper
     }
     static public function getUser()
     {
-        return auth()->check() ? auth()->user() : Stranger::where('cookie_id', Cookie::get('cookie_id'))->first();
+        $userCheck = auth()->check() ? auth()->user() : Stranger::where('cookie_id', Cookie::get('cookie_id'))->first();
+        if(!$userCheck) {
+            Crawl::create([
+                'ip' => request()->ip(),
+                'user_agent' => request()->userAgent(),
+                'is_crawler' => Crawler::isCrawler(),
+                'crawler' => Crawler::getMatches(),
+                'referrer' => request()->server('HTTP_REFERER'),
+                'url' => request()->fullUrl(),
+            ]);
+            return User::find(2);
+        }
+        else {
+            return $userCheck;
+        }
     }
 }

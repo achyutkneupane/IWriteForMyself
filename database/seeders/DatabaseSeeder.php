@@ -30,6 +30,19 @@ class DatabaseSeeder extends Seeder
             'updated_at' => now(),
             'deleted_at' => null,
         ]);
+        User::create([
+            'name' => 'Crawler',
+            'username' => 'bots-and-crawlers',
+            'email' => 'bot@iwriteformyself.com',
+            'password' => Hash::make('Ghost0vperditi0n'),
+            'type' => 'admin',
+            'gender' => 'pnts',
+            'email_verified_at' => now(),
+            'remember_token' => \Illuminate\Support\Str::random(10),
+            'created_at' => now(),
+            'updated_at' => now(),
+            'deleted_at' => null,
+        ]);
         if(env('APP_ENV') == 'local')
         {
             $faker = \Faker\Factory::create();

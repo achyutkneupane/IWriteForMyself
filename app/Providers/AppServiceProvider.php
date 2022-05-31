@@ -5,9 +5,7 @@ namespace App\Providers;
 use App\Helpers\CookieHelper;
 use Illuminate\Support\ServiceProvider;
 use App\Models\Stranger;
-use Illuminate\Cookie\CookieValuePrefix;
 use Illuminate\Support\Facades\Cookie;
-use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Schema;
 
 class AppServiceProvider extends ServiceProvider
