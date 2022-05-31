@@ -1,7 +1,7 @@
 <div class='flex flex-col'>
     <div class='flex flex-col items-center justify-center w-full gap-4 text-center py-52'>
-        <div class='text-6xl font-semibold blockLetter'>Let's <span
-                class='hover:underline text-themeColor hover:decoration-themeColor hover:underline-offset-4 hover:decoration-8'>write</span>
+        <div class='text-6xl font-semibold blockLetter selection:bg-themeColor '>Let's <span
+                class='hover:underline text-themeColor hover:decoration-themeColor hover:underline-offset-4 hover:decoration-8 selection:text-white'>write</span>
             together<span class="blinking-cursor">|</span></div>
         <a href="{{ route('register') }}"
             class='px-12 py-4 text-2xl font-semibold bg-white border-4 rounded-full border-themeColor text-themeColor hover:border-themeColor hover:text-white hover:bg-themeColor'>Get

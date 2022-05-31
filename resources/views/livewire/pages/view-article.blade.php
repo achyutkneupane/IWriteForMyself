@@ -1,5 +1,5 @@
 <main class='flex justify-center w-full gap-4 pt-12 pb-24'>
-    <article class='flex flex-col w-11/12 gap-8 md:w-1/2' itemscope itemtype="http://schema.org/Article">
+    <article class='flex flex-col w-11/12 gap-8 md:w-1/2 selection:bg-themeColor selection:text-white' itemscope itemtype="http://schema.org/Article">
         <header class='w-full'>
             <div class="relative overflow-hidden bg-white">
                 <a href='{{ $article->cover() }}' target="_blank"><img class="object-cover w-full h-full" height='630'
@@ -7,7 +7,7 @@
                         alt="{{ $article->title }} - {{ env('APP_NAME') }}" /></a>
                 <div class='absolute bottom-0 flex items-center justify-center w-full px-12 py-4 text-center'>
                     <span
-                        class='px-8 py-2 font-bold text-white rounded-full bg-themeColor'>{{ $article->category->title }}</span>
+                        class='px-8 py-2 font-bold text-white rounded-full bg-themeColor selection:bg-white selection:text-themeColor'>{{ $article->category->title }}</span>
                 </div>
             </div>
             <div class='flex flex-col gap-2 mt-4'>
@@ -15,11 +15,11 @@
                     itemprop="headline">
                     {{ $article->title }}
                 </h1>
-                <p class='text-sm italic text-justify subhead metadata'>"{{ $article->description }}"</p>
-                <div class='flex justify-center w-full gap-2 text-lg md:justify-start byline'>
+                <p class='text-sm italic text-justify subhead metadata selection:text-gray-300'>"{{ $article->description }}"</p>
+                <div class='flex justify-center w-full gap-3 text-lg md:justify-start byline'>
                     <time pubdate datetime="{{ $article->published_at }}"
                         itemprop="dateCreated datePublished">{{ \Carbon\Carbon::parse($article->published_at)->isoFormat('d MMM. Y') }}</time>
-                    <span>|</span>
+                    <span class='text-center'>|</span>
                     <address class='font-bold author' itemprop="author publisher" name="{{ $article->writer->name }}"><a
                             rel='author'>{{ $article->writer->name }}</a></address>
                 </div>
@@ -47,8 +47,7 @@
                         {{ $article->writer->name }}
                     </span>
                     <span class='text-sm'>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        the industry's standard dummy text ever since the 1500s.
+                        {!! $article->writer->bio ?? "<span class='text-gray-500'>No bio for now</span>" !!}
                     </span>
                 </div>
             </div>

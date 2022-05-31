@@ -25,7 +25,11 @@
     @livewire('components.footer')
     @endif
     <script src="{{ asset('js/app.js') }}" defer></script>
+
+    @if(request()->route()->getPrefix() != '/panel')
     <script src="{{ asset('js/share.js') }}"></script>
+    @endif
+
     @livewireScripts()
     @stack('scripts')
 </body>

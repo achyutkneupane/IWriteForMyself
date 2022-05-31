@@ -1,4 +1,4 @@
-<footer class='w-screen'>
+<footer class='w-screen selection:bg-white selection:text-themeColor'>
     <svg id="visual" viewBox="0 400 900 130" class='w-screen' xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
         <path

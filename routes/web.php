@@ -4,6 +4,7 @@ use App\Http\Livewire\Pages\LandingPage;
 use App\Http\Livewire\Pages\Login;
 use App\Http\Livewire\Pages\Register;
 use App\Http\Livewire\Pages\ViewArticle;
+use App\Http\Livewire\Panel\Dashboard;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,3 +26,8 @@ Route::get('/logout', function() {
     return redirect()->route('landingPage');
 })->name('logout');
 Route::get('/article/{slug}', ViewArticle::class)->name('article.view');
+
+// Panel Routes
+Route::prefix('/panel')->middleware('auth')->group(function() {
+    Route::get('/', Dashboard::class)->name('panel.home');
+});
